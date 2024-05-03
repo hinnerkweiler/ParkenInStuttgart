@@ -9,7 +9,7 @@ public class Rowset
     
     public Rowset NextYear(float percentage)
     {
-        float newDecline = (this.Remaining / 100) * percentage;
+        float newDecline = ((Remaining / 100) * percentage);
         return new Rowset()
         {
             Year = this.Year + 1,
@@ -18,16 +18,4 @@ public class Rowset
             Remaining = this.Remaining - newDecline 
         };
     }
-
-    public Rowset Dream(float factor)
-    {
-        return new Rowset()
-        {
-            Year = this.Year + 1,
-            Decline = 0,
-            Remaining = 0,
-            Total = this.Total * factor
-        };
-    }
-    
 }
